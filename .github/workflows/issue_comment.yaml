@@ -13,7 +13,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            This is a multi-line test comment
+            This is a multi-line test comment˝
             - With GitHub **Markdown** :sparkles:
             - Created by [create-or-update-comment][1]
 
@@ -26,7 +26,7 @@ jobs:
       - name: Create comment with API
         run: |
           gh api -X POST \
-            http://api.github.com/repo/${ORGANIZATION}/{$REPOSITORY}/issues/{$ISSUE_NUMBER}/comments \
+            http://api.github.com/repos/${ORGANIZATION}/{$REPOSITORY}/issues/{$ISSUE_NUMBER}/comments \
             -f body='
             Comment from API call not action
             '
